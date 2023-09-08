@@ -29,6 +29,7 @@ const CreateTeam = () => {
       adminEmail,
       details,
       members: [user?.email],
+      totalTask: 0,
     };
 
     saveTeamDataToLocalStorage(teamId, TeamInfo);
