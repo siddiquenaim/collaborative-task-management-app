@@ -80,9 +80,9 @@ const Banner = () => {
                     </div>
                     <div className="text-black text-center mt-2">
                       New to TaskTracker?{" "}
-                      <a href="/register" className="text-blue-500">
+                      <Link to="/register" className="text-blue-500">
                         Register
-                      </a>
+                      </Link>
                     </div>
                     {showError && (
                       <p className="text-red-600 text-center">{showError}</p>

@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import { FaPenToSquare } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="navbar bg-base-100 shadow-md">
       <div className="navbar-start">
@@ -30,21 +38,23 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
 
-            {/* {user && (
-              <li>
-                <NavLink to="dashboard">Dashboard</NavLink>
-              </li>
+            {user && (
+              <>
+                <li>
+                  <NavLink to="profile">Profile</NavLink>
+                </li>
+                <li>
+                  <NavLink to="dashboard">Dashboard</NavLink>
+                </li>
+              </>
             )}
             {!user && (
               <>
                 <li>
-                  <NavLink to="/login">Login</NavLink>
-                </li>
-                <li>
                   <NavLink to="/register">Register</NavLink>
                 </li>
               </>
-            )} */}
+            )}
           </ul>
         </div>
 
@@ -57,32 +67,34 @@ const Navbar = () => {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          {/* {user && (
-            <li>
-              <NavLink to="dashboard">Dashboard</NavLink>
-            </li>
+          {user && (
+            <>
+              <li>
+                <NavLink to="profile">Profile</NavLink>
+              </li>
+              <li>
+                <NavLink to="dashboard">Dashboard</NavLink>
+              </li>
+            </>
           )}
           {!user && (
             <>
               <li>
-                <NavLink to="/login">Login</NavLink>
-              </li>
-              <li>
                 <NavLink to="/register">Register</NavLink>
               </li>
             </>
-          )} */}
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        {/* {user && (
-        <a
-          onClick={handleLogOut}
-          className="btn lg:me-4 bg-[#021817] text-white hover:bg-[#0218179c]"
-        >
-          Logout
-        </a>
-      )} */}
+        {user && (
+          <a
+            onClick={handleLogOut}
+            className="btn lg:me-4 bg-[#021817] text-white hover:bg-[#0218179c]"
+          >
+            Logout
+          </a>
+        )}
       </div>
     </div>
   );

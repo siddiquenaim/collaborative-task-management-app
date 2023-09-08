@@ -27,6 +27,7 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
+        saveUserDataToLocalStorage(result.user.uid, userData);
         console.log(result);
         updateUserData(result.user, name, photo);
         form.reset();
@@ -47,6 +48,12 @@ const Register = () => {
       logOut()
         .then(() => {})
         .catch((error) => console.log(error));
+    };
+    // function to save user data to local storage
+    const saveUserDataToLocalStorage = (userId, userData) => {
+      const usersData = JSON.parse(localStorage.getItem("usersData")) || {};
+      usersData[userId] = userData;
+      localStorage.setItem("usersData", JSON.stringify(usersData));
     };
   };
 
@@ -130,7 +137,7 @@ const Register = () => {
             <div>
               <p className="text-center mt-3 font-semibold">
                 Already has an account?{" "}
-                <Link to="/login" className="text-blue-600">
+                <Link to="/" className="text-blue-600">
                   Login
                 </Link>
               </p>
