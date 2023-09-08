@@ -25,7 +25,7 @@ const Banner = () => {
           </div>
           <div className="lg:w-[50%] mx-auto">
             <div className="flex justify-center items-center">
-              <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#ffffffea]">
                 <form className="card-body">
                   <div className="form-control">
                     <label className="label">
@@ -56,7 +56,7 @@ const Banner = () => {
                     <button className="btn btn-primary">Login</button>
                   </div>
                   <div className="text-black text-center mt-2">
-                    Already has an account?{" "}
+                    New to TaskTracker?{" "}
                     <a href="/register" className="text-blue-500">
                       Register
                     </a>
