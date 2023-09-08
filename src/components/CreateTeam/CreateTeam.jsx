@@ -30,6 +30,7 @@ const CreateTeam = () => {
       details,
       members: [user?.email],
       totalTask: 0,
+      taskIds: [],
     };
 
     saveTeamDataToLocalStorage(teamId, TeamInfo);
