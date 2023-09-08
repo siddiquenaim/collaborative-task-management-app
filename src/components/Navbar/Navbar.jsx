@@ -50,6 +50,9 @@ const Navbar = () => {
                   <NavLink to="team">Your Team</NavLink>
                 </li>
                 <li>
+                  <NavLink to="joined-teams">Joined Teams</NavLink>
+                </li>
+                <li>
                   <NavLink to="dashboard">Dashboard</NavLink>
                 </li>
               </>
@@ -80,6 +83,9 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="team">Your Team</NavLink>
+              </li>
+              <li>
+                <NavLink to="joined-teams">Joined Teams</NavLink>
               </li>
               <li>
                 <NavLink to="dashboard">Dashboard</NavLink>

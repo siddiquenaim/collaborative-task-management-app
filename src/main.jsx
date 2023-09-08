@@ -8,6 +8,9 @@ import AuthProvider from "./provider/AuthProvider/AuthProvider";
 import Register from "./components/Register/Register";
 import Profile from "./components/Profile/Profile";
 import Team from "./components/Team/Team";
+import JoinedTeams from "./components/JoinedTeams/JoinedTeams";
+import Dashboard from "./components/Dashboard/Dashboard";
+import CreateTeam from "./components/CreateTeam/CreateTeam";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,18 @@ const router = createBrowserRouter([
       {
         path: "/team",
         element: <Team></Team>,
+      },
+      {
+        path: "/joined-teams",
+        element: <JoinedTeams></JoinedTeams>,
+      },
+      {
+        path: "/create-team",
+        element: <CreateTeam></CreateTeam>,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
       },
     ],
   },

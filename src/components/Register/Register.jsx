@@ -23,6 +23,8 @@ const Register = () => {
       photo,
       email,
       bio,
+      createdTeams: [],
+      joinedTeams: [],
     };
 
     createUser(email, password)
