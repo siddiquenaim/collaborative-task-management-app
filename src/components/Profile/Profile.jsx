@@ -4,11 +4,20 @@ const Profile = () => {
   const { getUserData } = useUserData();
 
   const userData = getUserData();
-  console.log(userData);
 
   return (
-    <div>
-      <h1>User profile</h1>
+    <div className="my-20">
+      <div className="flex justify-center">
+        <div className="avatar online">
+          <div className="w-36 rounded-full">
+            <img src={userData?.photo} />
+          </div>
+        </div>
+      </div>
+      <div className="text-center">
+        <h3 className="text-2xl font-bold my-5">{userData?.name}</h3>
+        <p>&#34;{userData?.bio}&#34;</p>
+      </div>
     </div>
   );
 };
