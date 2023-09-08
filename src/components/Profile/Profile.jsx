@@ -16,7 +16,7 @@ const Profile = () => {
       </div>
       <div className="text-center">
         <h3 className="text-2xl font-bold my-5">{userData?.name}</h3>
-        <p>&#34;{userData?.bio}&#34;</p>
+        <p className="lg:w-[50%] mx-auto">&#34;{userData?.bio}&#34;</p>
       </div>
     </div>
   );

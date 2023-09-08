@@ -1,13 +1,16 @@
 import { useContext } from "react";
 import { FaPenToSquare } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => {
+        navigate("/");
+      })
       .catch((error) => console.log(error));
   };
   return (
@@ -44,6 +47,9 @@ const Navbar = () => {
                   <NavLink to="profile">Profile</NavLink>
                 </li>
                 <li>
+                  <NavLink to="team">Your Team</NavLink>
+                </li>
+                <li>
                   <NavLink to="dashboard">Dashboard</NavLink>
                 </li>
               </>
@@ -71,6 +77,9 @@ const Navbar = () => {
             <>
               <li>
                 <NavLink to="profile">Profile</NavLink>
+              </li>
+              <li>
+                <NavLink to="team">Your Team</NavLink>
               </li>
               <li>
                 <NavLink to="dashboard">Dashboard</NavLink>
