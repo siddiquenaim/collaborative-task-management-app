@@ -39,11 +39,15 @@ const SingleTeam = () => {
           </table>
         </div>
       )}
-      <div className=" text-center">
+      <div className=" text-center space-x-3">
         {" "}
         <Link to={`/create-task/${teamId}`}>
           {" "}
           <button className="btn">Create a task</button>
+        </Link>
+        <Link to={`/add-team-member/${teamId}`}>
+          {" "}
+          <button className="btn">Add team member</button>
         </Link>
       </div>
     </div>
