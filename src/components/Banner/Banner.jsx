@@ -92,7 +92,7 @@ const Banner = () => {
               </div>
             ) : (
               <div>
-                <Link>
+                <Link to="/team">
                   <button className="btn btn-custom normal-case">
                     Start Your Journey
                   </button>

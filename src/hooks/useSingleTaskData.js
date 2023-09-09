@@ -16,7 +16,7 @@ const useSingleTaskData = ({ taskId }) => {
 
     fetchSingleTaskData();
   }, []);
-  console.log(task);
+  // console.log(task);
 
   return { task };
 };

@@ -14,6 +14,7 @@ import CreateTeam from "./components/CreateTeam/CreateTeam";
 import SingleTeam from "./components/SingleTeam/SingleTeam";
 import CreateTask from "./components/CreateTask/CreateTask";
 import SingleTask from "./components/SingleTask/SingleTask";
+import MemberProfile from "./components/MemberProfile/MemberProfile";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/task-details/:taskId",
         element: <SingleTask></SingleTask>,
+      },
+      {
+        path: "/user-details/:userId",
+        element: <MemberProfile></MemberProfile>,
       },
       {
         path: "/dashboard",

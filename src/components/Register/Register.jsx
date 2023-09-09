@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import uuid from "react-uuid";
 
 const Register = () => {
   const { createUser, logOut } = useContext(AuthContext);
@@ -17,8 +18,10 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const bio = form.bio?.value;
+    const userId = uuid();
 
     const userData = {
+      userId,
       name,
       photo,
       email,
