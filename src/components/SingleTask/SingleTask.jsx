@@ -6,6 +6,7 @@ import useTaskMembers from "../../hooks/useTaskMembers";
 
 const SingleTask = () => {
   const taskId = useParams();
+  const { teamId } = useParams();
   const { task } = useSingleTaskData(taskId);
   const { title, description, dueDate, priority, status, members } = task;
   const { taskMembers } = useTaskMembers(members);
@@ -54,7 +55,7 @@ const SingleTask = () => {
         </div>
       )}
       <div className=" text-center space-x-4">
-        <Link to={`/assign-member/${taskId.taskId}`}>
+        <Link to={`/assign-member/${teamId}/${taskId.taskId}`}>
           <button className="btn" disabled={status === "Completed"}>
             Assign a member
           </button>

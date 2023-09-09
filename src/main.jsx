@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         element: <AddTeamMember></AddTeamMember>,
       },
       {
-        path: "/task-details/:taskId",
+        path: "/task-details/:teamId/:taskId",
         element: <SingleTask></SingleTask>,
       },
       {
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         element: <MemberProfile></MemberProfile>,
       },
       {
-        path: "/assign-member/:taskId",
+        path: "/assign-member/:teamId/:taskId",
         element: <AssignMember></AssignMember>,
       },
       {
