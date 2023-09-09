@@ -45,6 +45,10 @@ const SingleTeam = () => {
           {" "}
           <button className="btn">Create a task</button>
         </Link>
+        <Link to={`/view-team-members/${teamId}`}>
+          {" "}
+          <button className="btn">View team members</button>
+        </Link>
         <Link to={`/add-team-member/${teamId}`}>
           {" "}
           <button className="btn">Add team member</button>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddTeamMember = () => {
   const { teamId } = useParams();
@@ -12,6 +13,13 @@ const AddTeamMember = () => {
     if (userExists(email) && !allTeams[teamId].members.includes(email)) {
       allTeams[teamId].members.push(email);
       localStorage.setItem("teamsData", JSON.stringify(allTeams));
+      Swal.fire({
+        icon: "success",
+        title: "User Added Successfully",
+        showConfirmButton: true,
+        timer: 1500,
+      });
+      form.reset();
     } else if (allTeams[teamId].members.includes(email)) {
       setError("User is already in the team");
     } else {

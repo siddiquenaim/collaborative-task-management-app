@@ -17,6 +17,7 @@ import SingleTask from "./components/SingleTask/SingleTask";
 import MemberProfile from "./components/MemberProfile/MemberProfile";
 import AssignMember from "./components/AssignMember/AssignMember";
 import AddTeamMember from "./components/AddTeamMember/AddTeamMember";
+import ViewTeamMembers from "./components/ViewTeamMembers/ViewTeamMembers";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/visit-team/:teamId",
         element: <SingleTeam></SingleTeam>,
+      },
+      {
+        path: "/view-team-members/:teamId",
+        element: <ViewTeamMembers></ViewTeamMembers>,
       },
       {
         path: "/add-team-member/:teamId",
