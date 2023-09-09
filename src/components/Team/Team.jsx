@@ -11,7 +11,7 @@ const Team = () => {
   const teamId = userData?.createdTeams[0];
   const { team } = useTeamData(teamId);
 
-  // console.log(team);
+  console.log(team);
 
   return (
     <div>
@@ -20,7 +20,9 @@ const Team = () => {
         <div className="text-center space-y-2">
           <p>You haven&apos;t created a team yet.</p>
           <Link to="/create-team">
-            <button className="btn">Create Team</button>
+            <button className="my-3 btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+              Create Team
+            </button>
           </Link>
         </div>
       ) : (

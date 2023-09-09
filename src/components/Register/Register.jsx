@@ -143,7 +143,9 @@ const Register = () => {
             </div>
             <p className="text-red-600">{showError && showError.slice(9)}</p>
             <div className="form-control mt-6">
-              <button className="btn ">Register</button>
+              <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+                Register
+              </button>
             </div>
             <div>
               <p className="text-center mt-3 font-semibold">

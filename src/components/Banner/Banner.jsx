@@ -76,7 +76,9 @@ const Banner = () => {
                       </label>
                     </div>
                     <div className="form-control mt-6">
-                      <button className="btn ">Login</button>
+                      <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+                        Login
+                      </button>
                     </div>
                     <div className="text-black text-center mt-2">
                       New to TaskTracker?{" "}
@@ -93,7 +95,7 @@ const Banner = () => {
             ) : (
               <div className="flex justify-center">
                 <Link to="/team">
-                  <button className="btn btn-custom normal-case">
+                  <button className="btn normal-case">
                     Start Your Journey
                   </button>
                 </Link>

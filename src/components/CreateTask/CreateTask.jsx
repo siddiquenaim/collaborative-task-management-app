@@ -122,7 +122,7 @@ const CreateTask = () => {
             </div>
             <div className="form-control mx-auto col-span-2 mt-4">
               <input
-                className="cursor-pointer btn"
+                className="cursor-pointer btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case"
                 type="submit"
                 value="Create Task"
               />
