@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const TaskRow = (props) => {
-  const [task, setTask] = useState();
-  const taskID = props.task;
-  const i = props.i;
+const TaskRow = ({ task, i }) => {
+  const { taskId, title, description, dueDate, priority, status } = task;
 
   return (
     <tr>
       <td>{i + 1}</td>
-      <td>{task?.adminName}</td>
-      <td>{task?.name}</td>
-      <td>{task?.members ? task?.members?.length : 0}</td>
-
+      <td>{title}</td>
+      <td>{description}</td>
+      <td>{dueDate}</td>
+      <td>{priority}</td>
+      <td>{status}</td>
       <td>
-        <Link to={`/task-details/${task?._id}`}>
+        <Link to={`/task-details/${taskId}`}>
           <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case btn-sm">
             View Details
           </button>

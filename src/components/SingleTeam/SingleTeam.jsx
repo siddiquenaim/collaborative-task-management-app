@@ -1,16 +1,14 @@
-import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useTeamData from "../../hooks/useTeamData";
 import TaskRow from "./TaskRow";
+import useTaskData from "../../hooks/useTaskData";
 
 const SingleTeam = () => {
   const { teamId } = useParams();
   const { team } = useTeamData(teamId);
-  const allTask = JSON.parse(localStorage.getItem("tasksData"));
-  const teamTask = allTask?.filter(
-    (singleTask) => singleTask?.teamId === teamId
-  );
-  console.log(allTask);
+  // const allTask = JSON.parse(localStorage.getItem("tasksData"));
+  const { tasks } = useTaskData(teamId);
+  console.log(tasks);
 
   return (
     <div>
@@ -18,9 +16,9 @@ const SingleTeam = () => {
         Welcome to {team?.name}
       </h1>
 
-      {teamTask && (
-        <div className="overflow-x-scroll lg:overflow-x-auto">
-          <table className="table w-[90%] lg:w-full mx-auto">
+      {tasks && (
+        <div className="overflow-x-scroll lg:overflow-x-auto my-10">
+          <table className="table w-[90%]  mx-auto">
             {/* head */}
             <thead>
               <tr>
@@ -29,10 +27,12 @@ const SingleTeam = () => {
                 <th>Description</th>
                 <th>Due Date</th>
                 <th>Priority Level</th>
+                <th>Status</th>
+                <th>View Task</th>
               </tr>
             </thead>
             <tbody>
-              {allTask?.map((task, i) => (
+              {tasks?.map((task, i) => (
                 <TaskRow key={task} i={i} task={task}></TaskRow>
               ))}
             </tbody>
@@ -41,7 +41,7 @@ const SingleTeam = () => {
       )}
       <div className=" text-center">
         {" "}
-        <Link to="/create-task">
+        <Link to={`/create-task/${teamId}`}>
           {" "}
           <button className="btn">Create a task</button>
         </Link>

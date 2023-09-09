@@ -13,6 +13,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import CreateTeam from "./components/CreateTeam/CreateTeam";
 import SingleTeam from "./components/SingleTeam/SingleTeam";
 import CreateTask from "./components/CreateTask/CreateTask";
+import SingleTask from "./components/SingleTask/SingleTask";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +45,16 @@ const router = createBrowserRouter([
         element: <CreateTeam></CreateTeam>,
       },
       {
-        path: "/create-task",
+        path: "/create-task/:teamId",
         element: <CreateTask></CreateTask>,
       },
       {
         path: "/visit-team/:teamId",
         element: <SingleTeam></SingleTeam>,
+      },
+      {
+        path: "/task-details/:taskId",
+        element: <SingleTask></SingleTask>,
       },
       {
         path: "/dashboard",
