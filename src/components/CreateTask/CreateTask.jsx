@@ -50,6 +50,14 @@ const CreateTask = () => {
   const saveTaskDataToLocalStorage = (taskId, taskData) => {
     // Retrieve existing tasks data from local storage
     const tasksData = JSON.parse(localStorage.getItem("tasksData")) || {};
+    const teamsData = JSON.parse(localStorage.getItem("teamsData"));
+
+    for (let key in teamsData) {
+      if (teamsData[key].teamId === teamId) {
+        teamsData[key].taskIds.push(taskId);
+        localStorage.setItem("teamsData", JSON.stringify(teamsData));
+      }
+    }
 
     // Add the new task data to the existing data
     tasksData[taskId] = taskData;
