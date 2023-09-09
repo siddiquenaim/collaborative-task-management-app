@@ -143,7 +143,7 @@ const Register = () => {
             </div>
             <p className="text-red-600">{showError && showError.slice(9)}</p>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn ">Register</button>
             </div>
             <div>
               <p className="text-center mt-3 font-semibold">

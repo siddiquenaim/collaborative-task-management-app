@@ -32,7 +32,7 @@ const JoinedTeams = () => {
               <p>Total Members: {team?.members?.length}</p>
               <div className="card-actions justify-end">
                 <Link to={`/visit-team/${team?.teamId}`}>
-                  <button className="btn btn-primary">View Team</button>
+                  <button className="btn ">View Team</button>
                 </Link>
               </div>
             </div>

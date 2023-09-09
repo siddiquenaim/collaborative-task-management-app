@@ -76,7 +76,7 @@ const Banner = () => {
                       </label>
                     </div>
                     <div className="form-control mt-6">
-                      <button className="btn btn-primary">Login</button>
+                      <button className="btn ">Login</button>
                     </div>
                     <div className="text-black text-center mt-2">
                       New to TaskTracker?{" "}

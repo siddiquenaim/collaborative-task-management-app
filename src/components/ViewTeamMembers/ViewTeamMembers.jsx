@@ -28,7 +28,7 @@ const ViewTeamMembers = () => {
 
               <div className="card-actions justify-end">
                 <Link to={`/user-details/${user?.userId}`}>
-                  <button className="btn btn-primary">View Profile</button>
+                  <button className="btn ">View Profile</button>
                 </Link>
               </div>
             </div>
