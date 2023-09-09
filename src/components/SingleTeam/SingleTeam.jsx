@@ -33,7 +33,7 @@ const SingleTeam = () => {
             </thead>
             <tbody>
               {tasks?.map((task, i) => (
-                <TaskRow key={task} i={i} task={task}></TaskRow>
+                <TaskRow key={i} i={i} task={task}></TaskRow>
               ))}
             </tbody>
           </table>

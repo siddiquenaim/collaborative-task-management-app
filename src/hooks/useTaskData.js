@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useTaskData = (taskTeamId) => {
   const [tasks, setTasks] = useState([]);
-  const allTasks = JSON.parse(localStorage.getItem("tasksData"));
+  const allTasks = JSON.parse(localStorage.getItem("tasksData")) || {};
 
   useEffect(() => {
     const fetchTaskData = () => {

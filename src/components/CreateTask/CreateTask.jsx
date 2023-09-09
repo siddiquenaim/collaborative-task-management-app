@@ -6,6 +6,7 @@ import uuid from "react-uuid";
 
 const CreateTask = () => {
   document.title = "Create Task | TaskTracker";
+  const { user } = useContext(AuthContext);
 
   const { teamId } = useParams();
 
@@ -18,7 +19,7 @@ const CreateTask = () => {
     const priority = form.priority.value;
     const taskId = uuid();
     const taskTeamId = teamId;
-    const members = [];
+    const members = [user.email];
     const status = "pending";
 
     const taskData = {
