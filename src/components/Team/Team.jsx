@@ -15,27 +15,27 @@ const Team = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-center mt-10 mb-5">Your Team</h2>
+      <h2 className="text-3xl font-bold text-center pt-10 pb-5">Your Team</h2>
       {userData?.createdTeams?.length === 0 ? (
         <div className="text-center space-y-2">
           <p>You haven&apos;t created a team yet.</p>
           <Link to="/create-team">
-            <button className="my-3 btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+            <button className="my-3 btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
               Create Team
             </button>
           </Link>
         </div>
       ) : (
-        <div className="mt-10 lg:flex">
-          <div className="w-[50%] mx-auto">
+        <div className="pt-10 lg:flex">
+          <div className="lg:w-[50%] mx-auto">
             <img
               src={team?.image}
-              className="h-[300px] w-[500px] mx-auto"
+              className="h-[300px] w-[500px] mx-auto rounded-sm"
               alt=""
             />
           </div>
-          <div className="flex justify-center items-center w-[50%] mx-auto">
-            <div className="mx-auto mt-5 text-2xl space-y-2 lg:text-start">
+          <div className="flex justify-center items-center lg:w-[50%] mx-auto">
+            <div className="mx-auto mt-5 text-lg space-y-2 lg:text-start">
               <p>
                 <span className="font-semibold">Admin Name:</span>{" "}
                 {team?.adminName}
@@ -55,10 +55,10 @@ const Team = () => {
               </p>
               <p>
                 <span className="font-semibold">Total Tasks:</span>{" "}
-                {team?.totalTask || 0}
+                {team?.taskIds ? team?.taskIds?.length : 0}
               </p>
               <Link to={`/visit-team/${team?.teamId}`}>
-                <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] mt-3">
+                <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] mt-5">
                   Visit Team
                 </button>
               </Link>

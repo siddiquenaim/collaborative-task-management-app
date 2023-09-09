@@ -9,6 +9,7 @@ const CreateTask = () => {
   const { user } = useContext(AuthContext);
 
   const { teamId } = useParams();
+  const navigate = useNavigate();
 
   const handleCreateTask = (event) => {
     event.preventDefault();
@@ -43,6 +44,7 @@ const CreateTask = () => {
       timer: 1500,
     });
 
+    navigate(-1);
     form.reset();
   };
 
@@ -67,7 +69,7 @@ const CreateTask = () => {
   };
 
   return (
-    <div className="mb-20 mt-10 w-[90%] mx-auto">
+    <div className="mb-20 pt-10 w-[90%] mx-auto">
       <div>
         <h1 className="text-3xl text-center font-bold">Create a Task</h1>
         <div className="my-5">
@@ -122,7 +124,7 @@ const CreateTask = () => {
             </div>
             <div className="form-control mx-auto col-span-2 mt-4">
               <input
-                className="cursor-pointer btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case"
+                className="cursor-pointer btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case"
                 type="submit"
                 value="Create Task"
               />

@@ -13,7 +13,7 @@ const TaskRow = ({ task, i, teamId }) => {
       <td>{status}</td>
       <td>
         <Link to={`/task-details/${teamId}/${taskId}`}>
-          <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case btn-sm">
+          <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case btn-sm">
             View Details
           </button>
         </Link>

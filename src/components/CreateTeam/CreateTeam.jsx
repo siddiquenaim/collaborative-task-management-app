@@ -72,7 +72,7 @@ const CreateTeam = () => {
   };
 
   return (
-    <div className="mb-20 mt-10 w-[90%] mx-auto">
+    <div className="mb-20 pt-10 w-[90%] mx-auto">
       <div>
         <h1 className="text-3xl text-center font-bold">Create a Team</h1>
         <div className="my-5">
@@ -141,7 +141,7 @@ const CreateTeam = () => {
             </div>
             <div className="form-control mx-auto col-span-2 mt-4">
               <input
-                className="cursor-pointer btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case"
+                className="cursor-pointer btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case"
                 type="submit"
                 value="Create a Team"
               />

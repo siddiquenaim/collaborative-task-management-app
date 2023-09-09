@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <div>
       {" "}
-      <h1 className="text-2xl font-bold text-center mt-10 mb-5">
+      <h1 className="text-2xl font-bold text-center pt-10 pb-5">
         Summary of All Teams
       </h1>
       {allTeamArray && (

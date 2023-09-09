@@ -11,7 +11,7 @@ const MemberRow = ({ member, i }) => {
 
       <td>
         <Link to={`/user-details/${userId}`}>
-          <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case btn-sm">
+          <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case btn-sm">
             View Profile
           </button>
         </Link>

@@ -6,7 +6,7 @@ const Profile = () => {
   const userData = getUserData();
 
   return (
-    <div className="my-20">
+    <div className="py-20">
       <div className="flex justify-center">
         <div className="avatar online">
           <div className="w-36 rounded-full">

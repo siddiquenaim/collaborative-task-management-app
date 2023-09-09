@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddTeamMember = () => {
   const { teamId } = useParams();
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   let allTeams = JSON.parse(localStorage.getItem("teamsData"));
   const handleAddMember = (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ const AddTeamMember = () => {
         showConfirmButton: true,
         timer: 1500,
       });
+      navigate(-1);
       form.reset();
     } else if (allTeams[teamId].members.includes(email)) {
       setError("User is already in the team");
@@ -45,10 +47,10 @@ const AddTeamMember = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center mt-10 mb-5">
+      <h1 className="text-2xl font-bold text-center pt-10 pb-5">
         Add team member
       </h1>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center pt-10">
         <form onSubmit={handleAddMember} className="join">
           <input
             className="input input-bordered join-item"

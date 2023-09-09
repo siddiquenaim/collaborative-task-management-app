@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useTeamData from "../../hooks/useTeamData";
 import useTaskMembers from "../../hooks/useTaskMembers";
 import useSingleTaskData from "../../hooks/useSingleTaskData";
@@ -13,6 +13,8 @@ const AssignMember = () => {
   const { team } = useTeamData(teamId);
   const { members } = task;
   const { taskMembers } = useTaskMembers(members);
+  const navigate = useNavigate();
+
   const handleAssignMember = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,6 +35,7 @@ const AssignMember = () => {
                   showConfirmButton: true,
                   timer: 1500,
                 });
+                navigate(-1);
                 form.reset();
               }
             }
@@ -66,10 +69,10 @@ const AssignMember = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center mt-10 mb-5">
+      <h1 className="text-2xl font-bold text-center pt-10 pb-5">
         Assign team member
       </h1>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center pt-10">
         <form onSubmit={handleAssignMember} className="join">
           <input
             className="input input-bordered join-item"

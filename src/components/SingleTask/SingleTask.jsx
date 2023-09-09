@@ -3,6 +3,7 @@ import useSingleTaskData from "../../hooks/useSingleTaskData";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import MemberRow from "./MemberRow";
 import useTaskMembers from "../../hooks/useTaskMembers";
+import Swal from "sweetalert2";
 
 const SingleTask = () => {
   const taskId = useParams();
@@ -15,6 +16,12 @@ const SingleTask = () => {
   const handleMarkCompleted = () => {
     if (status !== "Completed") {
       updateTaskStatus("Completed");
+      Swal.fire({
+        icon: "success",
+        title: "Marked as Completed",
+        showConfirmButton: true,
+        timer: 1500,
+      });
       navigate(-1);
     }
   };
@@ -31,9 +38,15 @@ const SingleTask = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center mt-10 mb-5">{title}</h1>
-      <p className="text-center">{description}</p>
-      <p className="text-center">Total assigned members: {members?.length}</p>
+      <h1 className="text-2xl font-bold text-center pt-10 pb-5">{title}</h1>
+      <p className="text-center">
+        <span className="font-semibold">Task Description:</span>
+        {description}
+      </p>
+      <p className="text-center mt-2">
+        <span className="font-semibold">Total assigned members:</span>{" "}
+        {members?.length}
+      </p>
       {taskMembers && (
         <div className="overflow-x-scroll lg:overflow-x-auto my-10">
           <table className="table w-[90%]  mx-auto">
@@ -54,15 +67,18 @@ const SingleTask = () => {
           </table>
         </div>
       )}
-      <div className=" text-center space-x-4">
+      <div className="text-center space-x-4">
         <Link to={`/assign-member/${teamId}/${taskId.taskId}`}>
-          <button className="btn" disabled={status === "Completed"}>
+          <button
+            className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case"
+            disabled={status === "Completed"}
+          >
             Assign a member
           </button>
         </Link>
         {/* Disable the both the buttons if the task is already completed */}
         <button
-          className="btn"
+          className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case"
           onClick={handleMarkCompleted}
           disabled={status === "Completed"}
         >

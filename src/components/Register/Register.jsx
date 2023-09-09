@@ -74,12 +74,12 @@ const Register = () => {
         <div className="text-center lg:text-left lg:w-[50%] mx-auto">
           <h1 className="text-5xl font-bold">Register now!</h1>
           <p className="py-6 w-[75%] mx-auto lg:w-full">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            dolorum corporis itaque optio sint maxime dicta neque facere,
-            repellat, iste incidunt molestias, fugit iure enim veniam nemo eaque
-            libero consequuntur quod commodi fugiat ullam! Beatae et enim
-            eligendi eaque dolorem odit consequuntur maxime, est assumenda quo
-            rem impedit molestias ipsum.
+            Welcome to TaskTrackcer, your all-in-one solution for efficient task
+            management. Organize your team's work, set priorities, track
+            progress, and stay on top of deadlines with ease. Whether you're a
+            project manager or a team member, our platform empowers you to
+            collaborate seamlessly and achieve your goals. Try it now and
+            experience the future of task management!
           </p>
         </div>
         <div className="lg:w-[50%] mx-auto card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -143,7 +143,7 @@ const Register = () => {
             </div>
             <p className="text-red-600">{showError && showError.slice(9)}</p>
             <div className="form-control mt-6">
-              <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+              <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
                 Register
               </button>
             </div>

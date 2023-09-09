@@ -17,9 +17,15 @@ const JoinedTeams = () => {
   return (
     <div className="w-[90%] mx-auto">
       <h1 className="text-2xl font-bold text-center my-10 ">Joined teams</h1>
+      {userJoinedTeams.length === 0 && (
+        <p className="text-center">You haven't joined a team yet.</p>
+      )}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {userJoinedTeams.map((team) => (
-          <div key={team.teamId} className="card w-full bg-base-100 shadow-xl">
+          <div
+            key={team.teamId}
+            className="card w-full bg-base-100 shadow-xl rounded-sm"
+          >
             <figure>
               <img
                 src={team?.image}
@@ -32,7 +38,7 @@ const JoinedTeams = () => {
               <p>Total Members: {team?.members?.length}</p>
               <div className="card-actions justify-end">
                 <Link to={`/visit-team/${team?.teamId}`}>
-                  <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+                  <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
                     View Team
                   </button>
                 </Link>

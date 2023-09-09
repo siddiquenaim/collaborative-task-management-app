@@ -39,7 +39,7 @@ const SingleTeam = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center mt-10 mb-5">
+      <h1 className="text-2xl font-bold text-center pt-10 pb-5">
         Welcome to {team?.name}
       </h1>
 
@@ -111,17 +111,17 @@ const SingleTeam = () => {
 
       <div className="text-center space-x-3 mt-7">
         <Link to={`/create-task/${teamId}`}>
-          <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+          <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
             Create a task
           </button>
         </Link>
         <Link to={`/view-team-members/${teamId}`}>
-          <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+          <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
             View team members
           </button>
         </Link>
         <Link to={`/add-team-member/${teamId}`}>
-          <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+          <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
             Add team member
           </button>
         </Link>

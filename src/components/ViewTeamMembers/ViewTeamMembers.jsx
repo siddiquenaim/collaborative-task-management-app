@@ -15,7 +15,10 @@ const ViewTeamMembers = () => {
       <h1 className="text-2xl font-bold text-center my-10">Team Members</h1>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {taskMembers?.map((user) => (
-          <div key={user.userId} className="card w-full bg-base-100 shadow-xl">
+          <div
+            key={user.userId}
+            className="card w-full bg-base-100 shadow-xl rounded-sm"
+          >
             <figure>
               <img
                 src={user?.photo}
@@ -28,7 +31,7 @@ const ViewTeamMembers = () => {
 
               <div className="card-actions justify-end">
                 <Link to={`/user-details/${user?.userId}`}>
-                  <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+                  <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
                     View Profile
                   </button>
                 </Link>

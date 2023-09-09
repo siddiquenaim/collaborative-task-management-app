@@ -35,12 +35,14 @@ const Banner = () => {
       <div className="hero-content text-neutral-content">
         <div className="lg:flex gap-14 items-center">
           <div className="lg:w-[50%] mx-auto">
-            <h1 className="mb-5 text-5xl font-bold">Track and Manage Task</h1>
-            <p className="mb-5 lg:mx-auto text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-              obcaecati sapiente quisquam autem eius fugiat eligendi suscipit,
-              laborum, expedita optio, tempora doloribus at! Earum repellat
-              natus impedit repudiandae fuga dolorum?
+            <h1 className="pb-5 text-5xl font-bold">Track and Manage Task</h1>
+            <p className="pb-5 lg:mx-auto text-xl">
+              Welcome to TaskTrackcer, your all-in-one solution for efficient
+              task management. Organize your team's work, set priorities, track
+              progress, and stay on top of deadlines with ease. Whether you're a
+              project manager or a team member, our platform empowers you to
+              collaborate seamlessly and achieve your goals. Try it now and
+              experience the future of task management!
             </p>
           </div>
           <div className="lg:w-[50%] mx-auto">
@@ -76,7 +78,7 @@ const Banner = () => {
                       </label>
                     </div>
                     <div className="form-control mt-6">
-                      <button className="btn bg-[#021817] text-white hover:bg-[#0218179c] normal-case">
+                      <button className="btn bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case">
                         Login
                       </button>
                     </div>

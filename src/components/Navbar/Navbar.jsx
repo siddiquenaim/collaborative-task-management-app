@@ -105,7 +105,7 @@ const Navbar = () => {
         {user && (
           <a
             onClick={handleLogOut}
-            className="btn lg:me-4 bg-[#021817] text-white hover:bg-[#0218179c]"
+            className="btn lg:me-4 bg-[#2B3440] text-white hover:bg-[#0218179c] normal-case"
           >
             Logout
           </a>
