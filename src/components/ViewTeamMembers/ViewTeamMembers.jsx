@@ -17,7 +17,11 @@ const ViewTeamMembers = () => {
         {taskMembers?.map((user) => (
           <div key={user.userId} className="card w-full bg-base-100 shadow-xl">
             <figure>
-              <img src={user?.photo} alt="Team picture" className="h-[250px]" />
+              <img
+                src={user?.photo}
+                alt="Team picture"
+                className="h-[250px] w-[300px]"
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{user?.name}</h2>

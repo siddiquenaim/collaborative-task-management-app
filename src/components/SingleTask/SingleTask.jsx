@@ -1,6 +1,6 @@
 import React from "react";
 import useSingleTaskData from "../../hooks/useSingleTaskData";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import MemberRow from "./MemberRow";
 import useTaskMembers from "../../hooks/useTaskMembers";
 
@@ -9,6 +9,24 @@ const SingleTask = () => {
   const { task } = useSingleTaskData(taskId);
   const { title, description, dueDate, priority, status, members } = task;
   const { taskMembers } = useTaskMembers(members);
+  const navigate = useNavigate();
+
+  const handleMarkCompleted = () => {
+    if (status !== "Completed") {
+      updateTaskStatus("Completed");
+      navigate(-1);
+    }
+  };
+
+  const updateTaskStatus = (newStatus) => {
+    const allTask = JSON.parse(localStorage.getItem("tasksData"));
+    for (let id in allTask) {
+      if (id === taskId.taskId) {
+        allTask[id].status = newStatus;
+        localStorage.setItem("tasksData", JSON.stringify(allTask));
+      }
+    }
+  };
 
   return (
     <div>
@@ -35,12 +53,20 @@ const SingleTask = () => {
           </table>
         </div>
       )}
-      <div className=" text-center">
-        {" "}
-        <Link to={`/assign-member/${taskId}`}>
-          {" "}
-          <button className="btn">Assign a member</button>
+      <div className=" text-center space-x-4">
+        <Link to={`/assign-member/${taskId.taskId}`}>
+          <button className="btn" disabled={status === "Completed"}>
+            Assign a member
+          </button>
         </Link>
+        {/* Disable the both the buttons if the task is already completed */}
+        <button
+          className="btn"
+          onClick={handleMarkCompleted}
+          disabled={status === "Completed"}
+        >
+          Mark As Completed
+        </button>
       </div>
     </div>
   );

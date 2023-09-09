@@ -38,6 +38,12 @@ const Register = () => {
         form.reset();
         setShowError("");
         signOut();
+        Swal.fire({
+          icon: "success",
+          title: "Registered Successfully",
+          showConfirmButton: true,
+          timer: 1500,
+        });
         navigate("/");
       })
       .catch((error) => setShowError(error.message));
