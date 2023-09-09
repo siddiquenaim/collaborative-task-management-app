@@ -91,7 +91,7 @@ const Banner = () => {
                 </div>
               </div>
             ) : (
-              <div>
+              <div className="flex justify-center">
                 <Link to="/team">
                   <button className="btn btn-custom normal-case">
                     Start Your Journey

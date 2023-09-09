@@ -12,7 +12,7 @@ const MemberProfile = () => {
   return (
     <div className="my-20">
       <div className="flex justify-center">
-        <div className="avatar online">
+        <div className="avatar">
           <div className="w-36 rounded-full">
             <img src={userProfile?.photo} />
           </div>
